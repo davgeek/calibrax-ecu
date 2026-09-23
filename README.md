@@ -49,17 +49,12 @@ the source in the private development repository.
 
 CalibraX is free to download and try: you can open a project, browse calibrations,
 and edit tables/scalars without a license. **Writing a checksum-valid flash back to
-a real ECU requires a license**, since a bad checksum can leave the ECU unable to
-boot.
+a real ECU, and some optional apps, require a license**, since a bad checksum can
+leave the ECU unable to boot.
 
-To get one:
-
-1. Open **About** in the app and click **Generate request**, which saves a
-   `.cxreq` file.
-2. Send that file to the developer to receive a `.cxl` license file back.
-3. Back in **About**, click **Import license** and select the `.cxl` file — it's
-   installed into a `licenses/` folder next to `CalibraX.exe` and unlocks checksum
-   repair immediately, no restart needed.
+To purchase one, contact the developer. You'll receive an additional file to drop
+into the app's `definitions` folder that unlocks the licensed feature immediately —
+no account, activation server, or restart required.
 
 ## Supported interfaces
 
