@@ -17,13 +17,18 @@ visualize tables as curves or 3D surfaces.
   per part number — no hand-picked offsets.
 - **Compare & Undo** against the original flash image while editing.
 - **Curve and 3D surface views** for any table, alongside the standard grid.
+- **Live data**: view real-time engine parameters (RPM, MAP, coolant temp, and
+  more) while connected to the vehicle.
+- **Apps**: extend CalibraX with additional tools that run inside the app — the
+  first one available is a byte-level Hex Editor for the flash and other
+  captured memory images. 🔒 *some apps require a separate license*
 - **Growing vehicle coverage**: support for new part numbers is added regularly.
 - **Automatic update check**: the app checks this repository on startup and
   points you to the latest release when one is available.
 - **Write ECU flash / checksum repair** 🔒 *requires a license* — see
   [Licensing](#licensing) below.
 
-All of the above except the last one work with no license at all.
+Everything above except the two marked 🔒 works with no license at all.
 
 ## Download
 
