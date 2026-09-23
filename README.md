@@ -1,7 +1,7 @@
 # CalibraX
 
 CalibraX is a Windows desktop application for tuning JTEC engine control units
-(ECUs) used in 1996-2004 Chrysler, Jeep, and Dodge vehicles (68HC11-based,
+(ECUs) used in 1996-2004 Chrysler, Jeep, and Dodge vehicles (68HC16-based,
 communicating over J2534/SCI). It lets you read and write the ECU's flash memory,
 edit calibration tables and scalars with the correct addresses/scales for your
 specific part number, compare edits against the original file, undo changes, and
