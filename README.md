@@ -32,18 +32,24 @@ Everything above except the two marked 🔒 works with no license at all.
 
 ## Supported vehicles
 
-| Vehicle | Years | Engines | View & edit calibration | Read / write ECU |
-| ------- | ----- | ------- | ----------------------- | ---------------- |
-| Jeep Cherokee (XJ) | 1997, 1998 | 4.0L | ✅ | ✅ |
-| Jeep Grand Cherokee (ZJ/ZG) | 1997, 1998 | 4.0L, 5.2L, 5.9L | ✅ | ✅ |
-| Dodge Ram (BR) | 1997 | 5.2L | ✅ | ✅ |
-| Jeep Cherokee (XJ) | 1996 | 2.5L, 4.0L | ✅ | ⚠️ Untested |
-| Jeep Grand Cherokee (ZJ/ZG) | 1996 | 4.0L, 5.2L | ✅ | ⚠️ Untested |
-| Jeep Cherokee (XJ), JTEC+ ECU | 1999, 2001 | 2.5L, 4.0L | ✅ | 🔜 Coming later |
-| Jeep Wrangler (TJ), JTEC+ ECU | 2001 | 2.5L, 4.0L | ✅ | 🔜 Coming later |
-| Jeep Grand Cherokee (WJ), JTEC+ ECU | 1999, 2001 | 4.0L, 4.7L V8 | ✅ | 🔜 Coming later |
-| Dodge Ram, Dakota, Durango and vans, JTEC+ ECU | 1999 to 2001 | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
-| Dodge Viper, JTEC+ ECU | 2001 | 8.0L V10 | ✅ | 🔜 Coming later |
+| ECU | Year | Vehicle | Engines | View & edit calibration | Read / write ECU |
+| --- | ---- | ------- | ------- | ----------------------- | ---------------- |
+| JTEC | 1996 | Jeep Cherokee (XJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
+| JTEC | 1996 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L | ✅ | ⚠️ Untested |
+| JTEC | 1997 | Jeep Cherokee (XJ) | 4.0L | ✅ | ✅ |
+| JTEC | 1997 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L | ✅ | ✅ |
+| JTEC | 1997 | Dodge Ram (BR) | 5.2L | ✅ | ✅ |
+| JTEC | 1998 | Jeep Cherokee (XJ) | 4.0L | ✅ | ✅ |
+| JTEC | 1998 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L, 5.9L | ✅ | ✅ |
+| JTEC+ | 1999 | Jeep Cherokee (XJ) | 2.5L, 4.0L | ✅ | 🔜 Coming later |
+| JTEC+ | 1999 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | 🔜 Coming later |
+| JTEC+ | 1999 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
+| JTEC+ | 2000 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
+| JTEC+ | 2001 | Jeep Cherokee (XJ) | 4.0L | ✅ | 🔜 Coming later |
+| JTEC+ | 2001 | Jeep Wrangler (TJ) | 2.5L, 4.0L | ✅ | 🔜 Coming later |
+| JTEC+ | 2001 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | 🔜 Coming later |
+| JTEC+ | 2001 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
+| JTEC+ | 2001 | Dodge Viper | 8.0L V10 | ✅ | 🔜 Coming later |
 
 Coverage is by part number; more vehicles and part numbers are added regularly.
 Writing to the ECU requires a license (see [Licensing](#licensing)).
