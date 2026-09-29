@@ -15,10 +15,26 @@ visualize tables as curves or 3D surfaces.
   project file.
 - **Table and scalar editors** with correct units, scaling, and axis breakpoints
   per part number — no hand-picked offsets.
-- **Compare & Undo** against the original flash image while editing.
+- **Compare & Undo** against the original flash image while editing, with a
+  per-table count of what changed.
 - **Curve and 3D surface views** for any table, alongside the standard grid.
-- **Live data**: view real-time engine parameters (RPM, MAP, coolant temp, and
-  more) while connected to the vehicle.
+- **Logger**: a dedicated screen for live engine data, separate from the table
+  editor.
+  - View real-time parameters (RPM, MAP, coolant temp, fuel trims, and more)
+    while connected to the vehicle, and record them to a CSV log.
+  - Log tables fill in live as you drive: short and long term fuel trim, spark
+    advance, and injector pulse width, each averaged by RPM and MAP — the same
+    layout as the base fuel table, so a rich or lean cell is easy to spot.
+  - Open a previously recorded log to browse it: a chart of every channel
+    against time (zoom, pan, scrub), and the same log tables filled from the
+    whole file or filled live as you play it back.
+
+  ![Logger: live data and log tables](docs/screenshot-logger-live.png)
+  ![Logger: a recorded log's chart](docs/screenshot-logger-chart.png)
+  ![Logger: log tables from a recorded file](docs/screenshot-log-tables.png)
+
+- **Trouble codes**: read stored, pending, and one-trip fault codes, named from
+  your calibration when possible. 🔒 *clearing codes requires a license*
 - **Apps**: extend CalibraX with additional tools that run inside the app — the
   first one available is a byte-level Hex Editor for the flash and other
   captured memory images. 🔒 *some apps require a separate license*
@@ -28,7 +44,7 @@ visualize tables as curves or 3D surfaces.
 - **Write ECU flash / checksum repair** 🔒 *requires a license* — see
   [Licensing](#licensing) below.
 
-Everything above except the two marked 🔒 works with no license at all.
+Everything above except the parts marked 🔒 works with no license at all.
 
 ## Supported vehicles
 
