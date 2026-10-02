@@ -57,15 +57,15 @@ Everything above except the parts marked 🔒 works with no license at all.
 | JTEC | 1997 | Dodge Ram (BR) | 5.2L | ✅ | ✅ |
 | JTEC | 1998 | Jeep Cherokee (XJ) | 4.0L | ✅ | ✅ |
 | JTEC | 1998 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L, 5.9L | ✅ | ✅ |
-| JTEC+ | 1999 | Jeep Cherokee (XJ) | 2.5L, 4.0L | ✅ | 🔜 Coming later |
-| JTEC+ | 1999 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | 🔜 Coming later |
-| JTEC+ | 1999 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
-| JTEC+ | 2000 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
-| JTEC+ | 2001 | Jeep Cherokee (XJ) | 4.0L | ✅ | 🔜 Coming later |
-| JTEC+ | 2001 | Jeep Wrangler (TJ) | 2.5L, 4.0L | ✅ | 🔜 Coming later |
-| JTEC+ | 2001 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | 🔜 Coming later |
-| JTEC+ | 2001 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | 🔜 Coming later |
-| JTEC+ | 2001 | Dodge Viper | 8.0L V10 | ✅ | 🔜 Coming later |
+| JTEC+ | 1999 | Jeep Cherokee (XJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
+| JTEC+ | 1999 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | ⚠️ Untested |
+| JTEC+ | 1999 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 5.2L, 8.0L V10 | ✅ | ⚠️ Untested |
+| JTEC+ | 2000 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | ⚠️ Untested |
+| JTEC+ | 2001 | Jeep Cherokee (XJ) | 4.0L | ✅ | ⚠️ Untested |
+| JTEC+ | 2001 | Jeep Wrangler (TJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
+| JTEC+ | 2001 | Jeep Grand Cherokee (WJ) | 4.0L, 4.7L V8 | ✅ | ✅ |
+| JTEC+ | 2001 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 4.7L, 5.2L, 8.0L V10 | ✅ | ⚠️ Untested |
+| JTEC+ | 2001 | Dodge Viper | 8.0L V10 | ✅ | ⚠️ Untested |
 
 Coverage is by part number; more vehicles and part numbers are added regularly.
 Writing to the ECU requires a license (see [Licensing](#licensing)).
