@@ -12,7 +12,7 @@ visualize tables as curves or 3D surfaces.
 ## Features
 
 - **Read ECU flash** over a J2534 pass-thru interface, or open a previously saved
-  project file.
+  project file. Choose whether the controller is a JTEC or a JTEC+ before reading.
 - **Table and scalar editors** with correct units, scaling, and axis breakpoints
   per part number — no hand-picked offsets.
 - **Compare & Undo** against the original flash image while editing, with a
