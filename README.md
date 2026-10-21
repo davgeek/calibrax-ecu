@@ -55,6 +55,12 @@ Everything above except the parts marked 🔒 works with no license at all.
 | JTEC | 1997 | Jeep Cherokee (XJ) | 4.0L | ✅ | ✅ |
 | JTEC | 1997 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L | ✅ | ✅ |
 | JTEC | 1997 | Dodge Ram (BR) | 5.2L | ✅ | ✅ |
+| JTEC | 1997 | Jeep Cherokee (XJ) | 2.5L | ✅ | ⚠️ Untested |
+| JTEC | 1997 | Jeep Wrangler (TJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
+| JTEC | 1997 | Dodge Ram, Dakota and vans | 2.5L, 3.9L, 5.2L, 5.9L, 8.0L V10 | ✅ | ⚠️ Untested |
+| JTEC | 1998 | Jeep Cherokee (XJ) | 2.5L | ✅ | ⚠️ Untested |
+| JTEC | 1998 | Jeep Wrangler (TJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
+| JTEC | 1998 | Dodge Ram, Dakota, Durango and vans | 2.5L, 3.9L, 5.2L, 5.9L, 8.0L V10 | ✅ | ⚠️ Untested |
 | JTEC | 1998 | Jeep Cherokee (XJ) | 4.0L | ✅ | ✅ |
 | JTEC | 1998 | Jeep Grand Cherokee (ZJ/ZG) | 4.0L, 5.2L, 5.9L | ✅ | ✅ |
 | JTEC+ | 1999 | Jeep Cherokee (XJ) | 2.5L, 4.0L | ✅ | ⚠️ Untested |
@@ -105,9 +111,7 @@ device to device, so here's what's actually been tried:
 | -------------------- | ------------- |
 | Scanmatik 2 Pro (SM2 Pro) | ✅ Validated |
 | Autel MaxiFlash / V200    | ⚠️ Untested |
-| Tactrix OpenPort 2.0      | ⚠️ Untested |
 | Drew Technologies Mongoose Pro | ⚠️ Untested |
-| OBDLink MX+ (J2534 mode)  | ⚠️ Untested |
 
 "Untested" doesn't mean unsupported — it means nobody has confirmed it against a
 real ECU yet. If you try one of these (or another J2534 device) and it works (or
