@@ -34,15 +34,14 @@ visualize tables as curves or 3D surfaces.
   ![Logger: log tables from a recorded file](docs/screenshot-log-tables.png)
 
 - **Trouble codes**: read stored, pending, and one-trip fault codes, named from
-  your calibration when possible. 🔒 *clearing codes requires a license*
+  your calibration when possible.
 - **Apps**: extend CalibraX with additional tools that run inside the app — the
   first one available is a byte-level Hex Editor for the flash and other
   captured memory images. 🔒 *some apps require a separate license*
 - **Growing vehicle coverage**: support for new part numbers is added regularly.
 - **Automatic update check**: the app checks this repository on startup and
   points you to the latest release when one is available.
-- **Write ECU flash / checksum repair** 🔒 *requires a license* — see
-  [Licensing](#licensing) below.
+- **Write ECU flash / checksum repair**
 
 Everything above except the parts marked 🔒 works with no license at all.
 
