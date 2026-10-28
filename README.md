@@ -7,6 +7,8 @@ edit calibration tables and scalars with the correct addresses/scales for your
 specific part number, compare edits against the original file, undo changes, and
 visualize tables as curves or 3D surfaces.
 
+Website: [calibrax.davgeek.com](https://calibrax.davgeek.com)
+
 ![CalibraX table editor](docs/screenshot-main-editor.png)
 
 ## Features
