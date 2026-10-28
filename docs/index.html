@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CalibraX - JTEC and JTEC+ calibration editor</title>
+<meta name="description" content="Calibration editor for JTEC and JTEC+ engine controllers in 1996-2005 Chrysler, Jeep and Dodge vehicles.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23e5484d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1a1a1a;--bg2:#212121;--line:#333;--line2:#444;--tx:#e9e9e9;--tx2:#a0a0a0;--red:#e5484d;--mono:'JetBrains Mono',ui-monospace,Consolas,monospace;--head:'Barlow Condensed','Arial Narrow',sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 var(--body)}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(26,26,26,.96);z-index:5}
+header .wrap{display:flex;align-items:center;height:52px;gap:28px}
+.logo{font:700 22px var(--head);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;margin-right:auto}
+.logo i{display:inline-block;width:10px;height:10px;background:var(--red);margin-right:8px}
+nav a{font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--tx2);text-decoration:none;margin-left:22px}
+nav a:hover{color:var(--tx)}
+.hero{padding:56px 0 40px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;align-items:center}
+.kicker{font:500 12px var(--mono);color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+h1{font:700 58px/.98 var(--head);text-transform:uppercase;letter-spacing:.01em}
+.lead{color:var(--tx2);margin:20px 0 26px;max-width:440px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{font:500 13px var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:11px 18px;text-decoration:none;border:1px solid var(--line2)}
+.btn.p{background:var(--red);border-color:var(--red);color:#fff}
+.btn.p:hover{background:#f05a5f}.btn:not(.p):hover{border-color:var(--tx2)}
+.fine{font:400 12px var(--mono);color:var(--tx2);margin-top:14px}
+.table-wrap{background:var(--bg2);border:1px solid var(--line);overflow-x:auto}
+.table-wrap>*{min-width:560px}
+.tb-head{padding:10px 14px;border-bottom:1px solid var(--line);font:400 12px var(--mono);color:var(--tx2);display:flex;justify-content:space-between;gap:10px}
+.tb-head b{font-weight:500;color:var(--tx)}
+#fuel{width:100%;border-collapse:collapse;font:400 11px var(--mono);table-layout:fixed}
+#fuel th{color:#cfcfcf;font-weight:500;padding:4px 0;background:#1d1d1d;border:1px solid #262626}
+#fuel td{text-align:center;padding:5px 0;color:#111;border:1px solid rgba(0,0,0,.35);cursor:crosshair}
+#fuel td.hl{outline:1px solid #fff;outline-offset:-1px}
+.readout{padding:8px 14px;border-top:1px solid var(--line);font:400 12px var(--mono);color:var(--tx2);min-height:34px}
+.readout b{color:var(--tx);font-weight:500}
+.strip{border-bottom:1px solid var(--line)}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:20px 0 20px 18px;border-left:1px solid var(--line)}
+.strip div:first-child{border-left:0;padding-left:0}
+.strip b{display:block;font:600 36px/1 var(--head);letter-spacing:.02em}
+.strip span{font:400 12px var(--mono);color:var(--tx2);text-transform:uppercase;letter-spacing:.06em}
+section{padding:60px 0;border-bottom:1px solid var(--line)}
+.sh{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+.sh span{font:500 12px var(--mono);color:var(--red)}
+h2{font:600 34px var(--head);text-transform:uppercase;letter-spacing:.03em}
+.feat{display:grid;grid-template-columns:1fr 1fr;column-gap:56px}
+.feat div{display:grid;grid-template-columns:44px 1fr;padding:16px 0;border-top:1px solid var(--line)}
+.feat em{font:400 12px var(--mono);color:var(--tx2);font-style:normal;padding-top:3px}
+.feat h3{font:600 20px var(--head);text-transform:uppercase;letter-spacing:.03em}
+.feat p{color:var(--tx2);font-size:14px;margin-top:2px}
+.shots figure{margin-bottom:34px}
+.shots img{display:block;width:100%;border:1px solid var(--line)}
+.shots figcaption{font:400 12px var(--mono);color:var(--tx2);margin-top:8px}
+.ctl{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font:400 12px var(--mono)}
+.ctl input[type=search]{background:var(--bg2);border:1px solid var(--line2);color:var(--tx);font:400 13px var(--mono);padding:8px 10px;width:260px;max-width:100%}
+.ctl input:focus{outline:1px solid var(--red)}
+.ctl button{background:none;border:0;border-bottom:1px solid transparent;color:var(--tx2);font:inherit;text-transform:uppercase;letter-spacing:.06em;padding:4px 0;cursor:pointer}
+.ctl button.on{color:var(--tx);border-bottom-color:var(--red)}
+.cnt{margin-left:auto;color:var(--tx2)}
+table.v{width:100%;border-collapse:collapse;font-size:14px}
+.v th{font:500 12px var(--mono);color:var(--tx2);text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line2)}
+.v td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.v td:nth-child(1),.v td:nth-child(2){font-family:var(--mono);font-size:13px;white-space:nowrap}
+.v td:nth-child(4){font-family:var(--mono);font-size:13px;color:var(--tx2)}
+.s-ok{color:#5fd08a}.s-un{color:var(--tx2)}
+.s-ok,.s-un{font:400 12px var(--mono);white-space:nowrap}
+.note{font:400 12px var(--mono);color:var(--tx2);margin-top:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.two h3{font:600 20px var(--head);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+.two p{color:var(--tx2);font-size:15px;margin-bottom:12px}
+.two table{border-collapse:collapse;font:400 13px var(--mono);width:100%}
+.two td{padding:7px 0;border-top:1px solid var(--line)}
+footer{padding:28px 0 40px;font:400 12px var(--mono);color:var(--tx2)}
+footer .wrap{display:flex;gap:24px;flex-wrap:wrap}
+footer a{text-decoration:none}footer a:hover{color:var(--tx)}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}h1{font-size:46px}.feat,.two{grid-template-columns:1fr}.strip .wrap{grid-template-columns:1fr 1fr}.strip div:nth-child(3){border-left:0;padding-left:0}nav a:nth-child(n+4){display:none}.v th:nth-child(4),.v td:nth-child(4){display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#"><i></i>CalibraX</a><nav><a href="#features">Features</a><a href="#vehicles">Vehicles</a><a href="#download">Download</a><a href="https://github.com/davgeek/calibrax-ecu/wiki">Wiki</a></nav></div></header>
+
+<div class="hero"><div class="wrap">
+  <div>
+    <div class="kicker">JTEC / JTEC+ &middot; 1996-2005</div>
+    <h1>Edit the map.<br>Flash the ECU.</h1>
+    <p class="lead">A Windows calibration editor for Chrysler, Jeep and Dodge engine controllers. Every table and scalar opens with the right units, scaling and axes for your part number.</p>
+    <div class="btns"><a class="btn p" href="https://github.com/davgeek/calibrax-ecu/releases">Download</a><a class="btn" href="#vehicles">Supported vehicles</a></div>
+    <p class="fine">Free to read and edit. Writing flash needs a license.</p>
+  </div>
+  <div class="table-wrap">
+    <div class="tb-head"><b>Base Fuel Table</b><span>X: RPM &nbsp; Y: kPa &nbsp; ms</span></div>
+    <table id="fuel"></table>
+    <div class="readout" id="ro">Move over the table.</div>
+  </div>
+</div></div>
+
+<div class="strip"><div class="wrap">
+  <div><b>460+</b><span>Part numbers</span></div>
+  <div><b>1996-2005</b><span>Model years</span></div>
+  <div><b>J2534</b><span>Pass-thru read</span></div>
+  <div><b>Free</b><span>To view and edit</span></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+  <div class="sh"><span>01</span><h2>What it does</h2></div>
+  <div class="feat">
+    <div><em>A</em><span><h3>Table and scalar editors</h3><p>Correct units, scaling and axis breakpoints per part number. No hand-picked offsets.</p></span></div>
+    <div><em>B</em><span><h3>Compare and undo</h3><p>Check every edit against the original flash, with a count of what changed in each table.</p></span></div>
+    <div><em>C</em><span><h3>Curve and 3D views</h3><p>See any table as a grid, a curve or a surface.</p></span></div>
+    <div><em>D</em><span><h3>Read the ECU</h3><p>Read the flash over a J2534 pass-thru interface, or open a saved project.</p></span></div>
+    <div><em>E</em><span><h3>Logger</h3><p>Live engine data, recorded to CSV, with fuel trim, spark and pulse width tables that fill in as you drive.</p></span></div>
+    <div><em>F</em><span><h3>Trouble codes</h3><p>Stored, pending and one-trip codes, named from your calibration.</p></span></div>
+    <div><em>G</em><span><h3>Apps</h3><p>Extra tools inside the app, starting with a byte-level hex editor. Some need a license.</p></span></div>
+    <div><em>H</em><span><h3>Write flash</h3><p>Checksum-checked flash writing. Needs a license.</p></span></div>
+  </div>
+</div></section>
+
+<section id="logger"><div class="wrap shots">
+  <div class="sh"><span>02</span><h2>Logger</h2></div>
+  <figure><img src="screenshot-logger-live.png" alt="Logger with live data and log tables"><figcaption>Live data and log tables</figcaption></figure>
+  <figure><img src="screenshot-logger-chart.png" alt="Chart of a recorded log"><figcaption>A recorded log: every channel against time</figcaption></figure>
+  <figure><img src="screenshot-log-tables.png" alt="Log tables from a recorded file"><figcaption>Log tables filled from a recorded file</figcaption></figure>
+</div></section>
+
+<section id="vehicles"><div class="wrap">
+  <div class="sh"><span>03</span><h2>Supported vehicles</h2></div>
+  <div class="ctl">
+    <input type="search" id="q" placeholder="Search model, engine, year" aria-label="Search vehicles">
+    <span id="ecuf"><button class="on" data-f="all">All</button> <button data-f="JTEC">JTEC</button> <button data-f="JTEC+">JTEC+</button> <button data-f="ok">Confirmed on vehicle</button></span>
+    <span class="cnt" id="cnt"></span>
+  </div>
+  <table class="v"><thead><tr><th>Year</th><th>ECU</th><th>Vehicle</th><th>Engines</th><th>Read / write</th></tr></thead><tbody id="vb"></tbody></table>
+  <p class="note">Coverage is by part number; more are added with every release. "Untested" means nobody has confirmed it on a vehicle yet.</p>
+</div></section>
+
+<section id="download"><div class="wrap two">
+  <div>
+    <div class="sh" style="margin-bottom:12px"><span>04</span><h2>Download</h2></div>
+    <p>Portable, self-contained .exe for Windows. No .NET install. Unzip and run CalibraX.exe.</p>
+    <p>If Windows SmartScreen warns about the file, choose More info, then Run anyway. The build has no paid code-signing certificate yet.</p>
+    <div class="btns"><a class="btn p" href="https://github.com/davgeek/calibrax-ecu/releases">Latest release</a></div>
+    <p class="fine">Reading and editing are free. Writing flash and some apps need a license: contact the developer.</p>
+  </div>
+  <div>
+    <div class="sh" style="margin-bottom:12px"><span>05</span><h2>Interfaces</h2></div>
+    <p>Any J2534 pass-thru device. What has been tried:</p>
+    <table><tr><td>Scanmatik 2 Pro (SM2 Pro)</td><td class="s-ok">Validated</td></tr><tr><td>Autel MaxiFlash / V200</td><td class="s-un">Untested</td></tr><tr><td>Drew Technologies Mongoose Pro</td><td class="s-un">Untested</td></tr></table>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><a href="https://github.com/davgeek/calibrax-ecu">GitHub</a><a href="https://github.com/davgeek/calibrax-ecu/wiki">Wiki</a><a href="https://github.com/davgeek/calibrax-ecu/issues">Issues</a><a href="https://github.com/davgeek/calibrax-ecu/releases">Releases</a></div></footer>
+
+<script>
+var ROWS=[["JTEC", 1996, "Jeep Cherokee (XJ)", "2.5L, 4.0L", false], ["JTEC", 1996, "Jeep Grand Cherokee (ZJ/ZG)", "4.0L, 5.2L", false], ["JTEC", 1997, "Jeep Cherokee (XJ)", "4.0L", true], ["JTEC", 1997, "Jeep Cherokee (XJ)", "2.5L", false], ["JTEC", 1997, "Jeep Grand Cherokee (ZJ/ZG)", "4.0L, 5.2L", true], ["JTEC", 1997, "Jeep Wrangler (TJ)", "2.5L, 4.0L", false], ["JTEC", 1997, "Dodge Ram (BR)", "5.2L", true], ["JTEC", 1997, "Dodge Ram, Dakota and vans", "2.5L, 3.9L, 5.2L, 5.9L, 8.0L V10", false], ["JTEC", 1998, "Jeep Cherokee (XJ)", "4.0L", true], ["JTEC", 1998, "Jeep Cherokee (XJ)", "2.5L", false], ["JTEC", 1998, "Jeep Grand Cherokee (ZJ/ZG)", "4.0L, 5.2L, 5.9L", true], ["JTEC", 1998, "Jeep Wrangler (TJ)", "2.5L, 4.0L", false], ["JTEC", 1998, "Dodge Ram, Dakota, Durango and vans", "2.5L, 3.9L, 5.2L, 5.9L, 8.0L V10", false], ["JTEC+", 1999, "Jeep Cherokee (XJ)", "2.5L, 4.0L", false], ["JTEC+", 1999, "Jeep Grand Cherokee (WJ)", "4.0L, 4.7L V8", false], ["JTEC+", 1999, "Dodge Ram, Dakota, Durango and vans", "2.5L, 3.9L, 5.2L, 5.9L, 8.0L V10", false], ["JTEC+", 2000, "Dodge Ram, Dakota, Durango and vans", "2.5L, 3.9L, 4.7L, 5.2L, 5.9L, 8.0L V10", false], ["JTEC+", 2001, "Jeep Cherokee (XJ), including China", "4.0L", false], ["JTEC+", 2001, "Jeep Wrangler (TJ)", "2.5L, 4.0L", false], ["JTEC+", 2001, "Jeep Grand Cherokee (WJ)", "4.0L, 4.7L V8", true], ["JTEC+", 2001, "Dodge Ram, Dakota, Durango and vans", "2.5L, 3.9L, 4.7L, 5.2L, 5.9L, 8.0L V10", false], ["JTEC+", 2001, "Dodge Viper", "8.0L V10", false], ["JTEC+", 2002, "Dodge Ram 1500, Dakota, Durango and vans", "3.7L V6, 3.9L, 4.7L V8, 5.2L, 5.9L", false], ["JTEC+", 2002, "Jeep Grand Cherokee (WJ)", "4.7L V8 and 4.7L High Output", false], ["JTEC+", 2002, "Dodge Viper", "8.0L V10", false], ["JTEC+", 2003, "Dodge Ram 1500-2500, Dakota", "3.9L, 8.0L V10", false], ["JTEC+", 2003, "Jeep Liberty (KJ)", "3.7L V6", false], ["JTEC+", 2003, "Jeep Wrangler (TJ)", "2.4L", false], ["JTEC+", 2003, "Jeep Grand Cherokee (WJ)", "4.7L V8 and 4.7L High Output", false], ["JTEC+", 2003, "Dodge Viper", "8.3L V10", false], ["JTEC+", 2004, "Dodge Ram 1500-2500", "8.3L V10", false], ["JTEC+", 2004, "Jeep Grand Cherokee (WJ/WG)", "4.0L, 4.7L V8 and 4.7L High Output", false], ["JTEC+", 2004, "Dodge Viper", "8.3L V10", false], ["JTEC+", 2005, "Dodge Viper", "8.3L V10", false]];
+var FUEL={rpm:[512,704,800,896,992,1120,1248,1504,1760,1984,2240,2496,3008,3488,4000,4480,4992],kpa:[14.79,23.82,31.21,39.43,52.57,65.71,78.85,91.99,104.71],
+v:[[0.148,1.128,1.128,1.6,1.64,1.652,1.712,1.752,1.792,1.852,2.112,2.28,2.352,2.352,2.352,2.352,2.072],[1.128,1.128,1.128,1.6,1.64,1.652,1.712,1.752,1.792,1.852,2.112,2.28,2.352,2.352,2.352,2.352,2.072],[2.62,2.62,2.752,3.06,3.28,3.36,3.46,3.42,3.532,3.7,3.86,3.992,4.152,4.22,4.472,4.472,3.652],[3.968,3.972,3.98,4.48,4.692,4.76,4.812,4.8,4.892,5.032,5.072,5.22,5.352,5.5,5.992,5.9,5.22],[5.264,5.312,5.328,5.988,5.9,6.1,6.24,6.292,6.432,6.528,6.512,6.66,6.592,6.828,6.98,7.168,7.072],[6.66,6.668,6.74,7.612,7.58,7.668,7.8,7.82,7.8,7.9,7.98,8.36,8.152,8.34,9.04,9.42,9.16],[8.008,8.016,8.08,9.752,9.268,9.44,9.6,9.54,9.72,9.8,9.848,10.1,10.2,10.86,10.86,11.56,11.44],[9.46,9.468,9.608,11.96,11.188,11.428,11.34,11.46,11.688,11.628,11.868,11.928,12.008,12.28,13.628,14.388,13.568],[11.38,11.392,11.58,12.08,12.448,12.648,13.22,13.148,13.42,13.148,13.348,13.88,13.648,15.02,16.62,16.8,16.8]]};
+(function(){
+  var stops=[[0,[28,110,220]],[.2,[18,150,200]],[.4,[40,170,80]],[.6,[220,230,30]],[.8,[250,150,20]],[1,[235,25,25]]];
+  function col(t){for(var i=1;i<stops.length;i++){if(t<=stops[i][0]){var a=stops[i-1],b=stops[i],k=(t-a[0])/(b[0]-a[0]);return'rgb('+[0,1,2].map(function(j){return Math.round(a[1][j]+(b[1][j]-a[1][j])*k)}).join(',')+')'}}return'rgb(235,25,25)'}
+  var t=document.getElementById('fuel'),h='<tr><th>kPa</th>';
+  FUEL.rpm.forEach(function(r){h+='<th>'+r+'</th>'});h+='</tr>';
+  FUEL.v.forEach(function(row,y){h+='<tr><th>'+FUEL.kpa[y]+'</th>';row.forEach(function(v,x){h+='<td data-x="'+x+'" data-y="'+y+'" style="background:'+col(Math.min(1,v/16.8))+'">'+v.toFixed(1)+'</td>'});h+='</tr>'});
+  t.innerHTML=h;
+  var ro=document.getElementById('ro'),last=null;
+  t.addEventListener('mouseover',function(e){var c=e.target;if(c.tagName!=='TD')return;if(last)last.classList.remove('hl');c.classList.add('hl');last=c;var x=+c.dataset.x,y=+c.dataset.y;ro.innerHTML='<b>'+FUEL.rpm[x]+'</b> RPM &nbsp; <b>'+FUEL.kpa[y]+'</b> kPa &nbsp; = &nbsp; <b>'+FUEL.v[y][x].toFixed(3)+'</b> ms'});
+})();
+(function(){
+  var f='all',q=document.getElementById('q'),vb=document.getElementById('vb'),cnt=document.getElementById('cnt');
+  function draw(){var s=q.value.toLowerCase().trim(),h='',n=0;
+    ROWS.forEach(function(r){var txt=(r[1]+' '+r[0]+' '+r[2]+' '+r[3]).toLowerCase();if(s&&txt.indexOf(s)<0)return;if((f==='JTEC'||f==='JTEC+')&&r[0]!==f)return;if(f==='ok'&&!r[4])return;n++;
+      h+='<tr><td>'+r[1]+'</td><td>'+r[0]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td><td class="'+(r[4]?'s-ok':'s-un')+'">'+(r[4]?'Confirmed':'Untested')+'</td></tr>'});
+    vb.innerHTML=h||'<tr><td colspan="5" class="s-un">No matches</td></tr>';cnt.textContent=n+' of '+ROWS.length+' rows'}
+  q.addEventListener('input',draw);
+  document.querySelectorAll('#ecuf button').forEach(function(b){b.addEventListener('click',function(){f=b.dataset.f;document.querySelectorAll('#ecuf button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');draw()})});
+  draw();
+})();
+</script>
+</body>
+</html>
