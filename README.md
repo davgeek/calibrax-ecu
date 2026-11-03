@@ -30,9 +30,9 @@ Website: [calibrax.davgeek.com](https://calibrax.davgeek.com)
 - **Growing vehicle coverage**: support for new part numbers is added regularly.
 - **Automatic update check**: the app checks this repository on startup and
   points you to the latest release when one is available.
-- **Write ECU flash / checksum repair** 🔒
+- **Write ECU flash / checksum repair**
 
-Everything above except the parts marked 🔒 works with no license at all.
+Everything above except the parts marked 🔒 works with no license. You sign in with an account to use the application.
 
 ## Supported vehicles
 
@@ -50,7 +50,7 @@ the file, see the [FAQ](../../wiki/Licensing-and-FAQ).
 
 ## Licensing
 
-CalibraX is free to download and try: you can open a project, browse calibrations,
-and edit tables/scalars without a license. Writing a checksum-valid flash back to
-a real ECU, and some optional apps, require a license. To purchase one, contact
-the developer. Details in the [FAQ](../../wiki/Licensing-and-FAQ).
+Reading, editing and writing flash need no license: you sign in with an account and
+use them. Patches calculated on our servers (Boost OS, Launch Control and similar)
+use tokens, and some optional apps require a license. To purchase either, contact the
+developer. Details in the [FAQ](../../wiki/Licensing-and-FAQ).
