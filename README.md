@@ -54,3 +54,7 @@ Reading, editing and writing flash need no license: you sign in with an account 
 use them. Patches calculated on our servers (Boost OS, Launch Control and similar)
 use tokens, and some optional apps require a license. To purchase either, contact the
 developer. Details in the [FAQ](../../wiki/Licensing-and-FAQ).
+
+## Support
+
+CalibraX is developed by one person. If it is useful to you, you can support its development on [Patreon](https://www.patreon.com/davgeek). It is voluntary and gives no extra access. More in [Support CalibraX](../../wiki/Support).
