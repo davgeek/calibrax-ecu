@@ -34,6 +34,27 @@ Website: [calibrax.davgeek.com](https://calibrax.davgeek.com)
 
 Everything above except the parts marked 🔒 works with no license. You sign in with an account to use the application.
 
+## Supported vehicles
+
+JTEC (1996-1998) and JTEC+ (1999-2005) calibrations for Jeep Cherokee, Wrangler,
+Grand Cherokee and Liberty, Dodge Ram, Dakota, Durango, vans and Viper.
+See the [full list by year, vehicle and engine](../../wiki/Supported-vehicles).
+Supported J2534 devices are listed on [Supported interfaces](../../wiki/Supported-interfaces).
+
+## Download
+
+Grab the latest build from the [Releases](../../releases) page. Each release is a
+portable, self-contained `.exe` for Windows (win-x86) — no separate .NET runtime
+install required. Unzip and run `CalibraX.exe`. If Windows SmartScreen warns about
+the file, see the [FAQ](../../wiki/Licensing-and-FAQ).
+
+## Licensing
+
+Reading, editing and writing flash need no license: you sign in with an account and
+use them. Patches calculated on our servers (Boost OS, Launch Control and similar)
+use tokens, and some optional apps require a license. To purchase either, contact the
+developer. Details in the [FAQ](../../wiki/Licensing-and-FAQ).
+
 ## Support
 
 CalibraX is developed by one person. You can support its development with a monthly subscription on [Patreon](https://www.patreon.com/davgeek). Subscribers get direct help from the developer with questions about CalibraX and tuning. Reading, editing and writing flash stay license-free, and patches keep using tokens. More in [Support CalibraX](../../wiki/Support).
